@@ -3,6 +3,9 @@
         <div class="form-group">
             <router-link :to="{name: 'createCompany'}" class="btn btn-success">Create new company</router-link>
         </div>
+        <div class="form-group">
+            <router-link :to="{name: 'Test'}" class="btn btn-success">Test</router-link>
+        </div>
 
         <div class="panel panel-default">
             <div class="panel-heading">Companies list</div>

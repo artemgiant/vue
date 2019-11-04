@@ -1,9 +1,9 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
 
 require('./bootstrap');
 
@@ -12,9 +12,13 @@ import VueRouter from 'vue-router';
 
 window.Vue.use(VueRouter);
 
-import CompaniesIndex from './components/companies/CompaniesIndex.vue';
+import CompaniesIndex from './components/companies/test';
 import CompaniesCreate from './components/companies/CompaniesCreate.vue';
 import CompaniesEdit from './components/companies/CompaniesEdit.vue';
+import Test from './components/companies/test';
+
+
+
 
 const routes = [
     {
@@ -25,6 +29,7 @@ const routes = [
     },
     {path: '/admin/companies/create', component: CompaniesCreate, name: 'createCompany'},
     {path: '/admin/companies/edit/:id', component: CompaniesEdit, name: 'editCompany'},
+    {path: '/admin/test', component: Test, name: 'Test'},
 ]
 
 const router = new VueRouter({ routes })
