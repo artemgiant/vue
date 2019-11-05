@@ -1,11 +1,12 @@
 <template>
     <div>
         <div class="form-group">
-            <router-link :to="{name: 'createCompany'}" class="btn btn-success">Create new company</router-link>
+            <router-link :to="{name: 'indexCountries'}" class="btn btn-primary">Countries</router-link>
         </div>
         <div class="form-group">
-            <router-link :to="{name: 'Test'}" class="btn btn-success">Test</router-link>
+            <router-link :to="{name: 'createCompany'}" class="btn btn-success">Create new company</router-link>
         </div>
+
 
         <div class="panel panel-default">
             <div class="panel-heading">Companies list</div>
@@ -68,6 +69,7 @@
                     var app = this;
                     axios.delete('/api/v1/companies/' + id)
                         .then(function (resp) {
+
                             app.companies.splice(index, 1);
                         })
                         .catch(function (resp) {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Country;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //
+        return Country::all();
     }
 
     /**
@@ -35,7 +36,8 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $company = Country::create($request->all());
+        return $company;
     }
 
     /**
@@ -46,7 +48,7 @@ class CountryController extends Controller
      */
     public function show($id)
     {
-        //
+        return Country::findOrFail($id);
     }
 
     /**
@@ -69,7 +71,10 @@ class CountryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $company = Country::findOrFail($id);
+        $company->update($request->all());
+
+        return $company;
     }
 
     /**
@@ -80,6 +85,8 @@ class CountryController extends Controller
      */
     public function destroy($id)
     {
-        //
+//        $coutnry = Country::findOrFail($id);
+//        $coutnry->delete();
+        return '';
     }
 }
